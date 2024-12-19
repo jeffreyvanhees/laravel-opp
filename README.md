@@ -4,6 +4,9 @@ This package provides a simple way to interact with the Online Payment Platform 
 Please note that this package is not developed by Online Payment Platform itself and by using this package
 you agree that the author is not responsible for any damage caused by using this package.
 
+Visit the Online Payment Platform [website](https://onlinepaymentplatform.com/) for more information or read
+the API documentation [here](https://docs.onlinepaymentplatform.com/).
+
 > [!CAUTION]
 > This package is still in development and should not be used in production environments. For testing purposes only.
 
