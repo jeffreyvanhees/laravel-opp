@@ -20,7 +20,10 @@ the API documentation [here](https://docs.onlinepaymentplatform.com/).
 
 Add Online Payment Platform for Laravel to your composer file via the composer require command:
 
+```bash
 composer require jeffreyvanhees/laravel-opp
+```
+
 Or add it to composer.json manually:
 
 ```json
