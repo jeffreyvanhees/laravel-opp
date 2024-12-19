@@ -62,17 +62,37 @@ OPP_NOTIFY_URL=your-notify-url
 
 ## Example
 
-### Create a merchant
+### List merchants
+
+This will automatically fetch all merchants and return a collection. It will also handle pagination
+so when you take 100 merchants, it will fetch every next page until it has 100 merchants.
 
 ```php
-$connector = new \Jeffreyvanhees\LaravelOpp\OnlinePaymentPlatformConnector();
 
-$merchant = $connector->merchants()->create([
-    'type' => 'consumer',
-    'name' => 'Test Merchant',
-    'email' => 'test@email.com',
-    'phone' => '1234567890',
-])->json();
+
+$merchants = OnlinePaymentPlatformConnector::make()
+    ->merchants()
+    ->paginate()
+    ->collect()
+    ->take(20);
+```
+
+### Create a merchant
+
+This will create a new merchant with the given data. The data is first validated by the package itself and then
+sent to the Online Payment Platform API. The response is then returned as a JSON object. You can also use `->dto()`
+instead of `->json()` to get a data transfer object.
+
+```php
+$merchant = OnlinePaymentPlatformConnector::make()
+    ->merchants()
+    ->create([
+        'type' => 'consumer',
+        'name' => 'Test Merchant',
+        'email' => 'test@email.com',
+        'phone' => '1234567890',
+    ])
+    ->json();
 ```
 
 Result (stripped unrelated data):
