@@ -11,7 +11,7 @@
     },
     "autoload": {
         "psr-4": {
-            "JeffreyVanHees\\LaravelOpp\\": "src/"
+            "JeffreyVanHees\\LaravelOpp\\": "./"
         }
     },
     "minimum-stability": "dev"
