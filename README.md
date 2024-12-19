@@ -26,7 +26,7 @@ Or add it to composer.json manually:
 ```json
 {
     "require": {
-        "mollie/laravel-mollie": "^3.0"
+        "jeffreyvanhees/laravel-opp": "@dev"
     }
 }
 ```
