@@ -3,6 +3,7 @@
     "description": "Outputs restaurant menu as structured data",
     "type": "library",
     "require": {
+        "php": "^8.1",
         "laravel/framework": "^v11",
         "saloonphp/saloon": "^v3.10",
         "saloonphp/laravel-plugin": "^v3.5",
