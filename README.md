@@ -60,3 +60,45 @@ OPP_RETURN_URL=your-return-url
 OPP_NOTIFY_URL=your-notify-url
 ```
 
+## Example
+
+### Create a merchant
+
+```php
+$connector = new \Jeffreyvanhees\LaravelOpp\OnlinePaymentPlatformConnector();
+
+$merchant = $connector->merchants()->create([
+    'type' => 'consumer',
+    'name' => 'Test Merchant',
+    'email' => 'test@email.com',
+    'phone' => '1234567890',
+])->json();
+```
+
+Result (stripped unrelated data):
+
+```json
+{
+    "uid": "mer_f14eb0123d92f",
+    "object": "merchant",
+    "created": 1734616763,
+    "updated": 1734616763,
+    "status": "pending",
+    "compliance": {
+        "level": 100,
+        "status": "verified",
+        "overview_url": "https://sandbox.onlinebetaalplatform.nl/xxxxxx",
+        "requirements": []
+    },
+    "type": "consumer",
+    "name_first": "John",
+    "name_last": "Doe",
+    "phone": "1234567890",
+    "email": "test@email.com",
+    "country": "nld",
+    "addresses": [],
+    "notify_url": "https://emeals.jeffreyvanhees.nl/api/hooks/opp",
+    "return_url": null,
+    "metadata": []
+}
+```
