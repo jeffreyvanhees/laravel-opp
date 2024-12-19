@@ -1,0 +1,18 @@
+{
+    "name": "jeffreyvanhees/laravel-opp",
+    "description": "Outputs restaurant menu as structured data",
+    "type": "library",
+    "require": {
+        "laravel/framework": "^v11",
+        "saloonphp/saloon": "^v3.10",
+        "saloonphp/laravel-plugin": "^v3.5",
+        "saloonphp/laravel-http-sender": "v3.0",
+        "spatie/laravel-data": "4.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "JeffreyVanHees\\LaravelOpp\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
