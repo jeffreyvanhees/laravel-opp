@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace JeffreyVanHees\LaravelOpp\Data\Responses;
 
-use App\Integrations\OnlinePaymentPlatform\Enums\MerchantSettlementStatus;
 use DateTime;
+use JeffreyVanHees\LaravelOpp\Enums\MerchantSettlementStatus;
 use JsonException;
 use Saloon\Contracts\DataObjects\WithResponse;
 use Saloon\Http\Response;

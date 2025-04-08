@@ -7,6 +7,7 @@
         "laravel/framework": "^v11",
         "saloonphp/saloon": "^v3.10",
         "saloonphp/laravel-plugin": "^v3.5",
+        "saloonphp/pagination-plugin": "^2.0",
         "saloonphp/laravel-http-sender": "v3.0",
         "spatie/laravel-data": "4.11"
     },

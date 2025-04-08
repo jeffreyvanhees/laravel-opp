@@ -23,32 +23,33 @@ class OnlinePaymentPlatformConnector extends Connector implements HasBody, HasPa
     use AlwaysThrowOnErrors;
     use HasJsonBody;
 
-    protected array $filters = [];
-
     /**
      * Resolve the base URL of the service.
      */
     public function resolveBaseUrl(): string
     {
-        return config('services.opp.url');
+        return config('services.opp.base_url');
     }
 
+
+
     /**
-     * Merchants resource
+     * Define default authenticator
      */
-    public function merchants(): MerchantsResource
+    protected function defaultAuth(): ?Authenticator
     {
-        return new MerchantsResource($this);
+        return new TokenAuthenticator(config('services.opp.api_key'));
     }
 
     /**
-     * Partner resource
-     *
-     * @return void
+     * Define default authenticator
      */
-    public function partner() {}
-
-    public function transactions() {}
+    protected function defaultBody(): array
+    {
+        return [
+            'notify_url' => config('services.opp.notify_url'),
+        ];
+    }
 
     /**
      * Paginate the response
@@ -78,20 +79,20 @@ class OnlinePaymentPlatformConnector extends Connector implements HasBody, HasPa
     }
 
     /**
-     * Define default authenticator
+     * Merchants resource
      */
-    protected function defaultAuth(): ?Authenticator
+    public function merchants(): MerchantsResource
     {
-        return new TokenAuthenticator(config('services.opp.api_key'));
+        return new MerchantsResource($this);
     }
 
     /**
-     * Define default authenticator
+     * Partner resource
+     *
+     * @return void
      */
-    protected function defaultBody(): array
-    {
-        return [
-            'notify_url' => config('services.opp.notify_url'),
-        ];
-    }
+    public function partner() {}
+
+    public function transactions() {}
+
 }

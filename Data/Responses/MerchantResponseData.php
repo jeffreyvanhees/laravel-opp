@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace JeffreyVanHees\LaravelOpp\Data\Responses;
 
-use App\Integrations\OnlinePaymentPlatform\Enums\MerchantType;
+use JeffreyVanHees\LaravelOpp\Enums\MerchantType;
 use JsonException;
 use Saloon\Http\Response;
 use Spatie\LaravelData\Attributes\DataCollectionOf;

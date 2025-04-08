@@ -12,4 +12,5 @@ enum MerchantStatus: string
     case TERMINATED = 'terminated';
     case SUSPENDED = 'suspended';
     case BLOCKED = 'blocked';
+    case DELETED = 'deleted';
 }
